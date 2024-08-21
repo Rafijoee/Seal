@@ -11,7 +11,7 @@ class Project extends Model
 
     protected $fillable = ['name', 'description', 'created_by'];
 
-    public function creator()
+    public function user()
     {
         return $this->belongsTo(User::class, 'created_by');
     }

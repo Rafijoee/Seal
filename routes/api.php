@@ -14,8 +14,6 @@ Route::get('/user', function (Request $request) {
 Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
 
-Route::middleware('auth:api')->group(function () {
-    Route::resource('users', UserController::class);
-    Route::resource('projects', ProjectController::class);
-    Route::resource('tasks', TaskController::class);
-});
+Route::resource('users', UserController::class);
+Route::resource('projects', ProjectController::class);
+Route::resource('tasks', TaskController::class);
